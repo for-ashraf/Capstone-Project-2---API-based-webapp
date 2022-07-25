@@ -1,0 +1,30 @@
+{
+  "name": "capstone-project-2---api-based-webapp",
+  "version": "1.0.0",
+  "description": ">This is a group project of three people <a href=\"https://github.com/for-ashraf\">Muhammad Ashraf</a>, <a href=\"https://github.com/AbrahaKahsay\">Abraha</a> and <a href=\"https://github.com/lucabenaventew\">Luca</a>.",
+  "private": true,
+  "build": "webpack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/for-ashraf/Capstone-Project-2---API-based-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/for-ashraf/Capstone-Project-2---API-based-webapp/issues"
+  },
+  "homepage": "https://github.com/for-ashraf/Capstone-Project-2---API-based-webapp#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}

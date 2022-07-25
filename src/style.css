@@ -1,0 +1,91 @@
+body {
+    background-color: bisque;
+    padding: 0%;
+  }
+  
+  .menu-section {
+    width: 60%;
+    height: auto;
+    margin: 10% 0 0 20%;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  .first-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .arrows {
+    margin: 2%;
+    height: 18px;
+    transition: all 0.2s;
+  }
+  
+  .arrows.active {
+    transform: rotate(180deg);
+  }
+  
+  /* add - bar */
+  .the-input-bar {
+    display: flex;
+    background-color: white;
+    padding: 0 1rem 0 1rem;
+    height: 4rem;
+  }
+  
+  .input-bar {
+    font-style: italic;
+    margin: 0%;
+    width: 99%;
+    height: auto;
+    border-style: none;
+  }
+  
+  .add-button {
+    font-size: 2rem;
+    height: 2rem;
+    margin: 0.9rem;
+    cursor: pointer;
+  }
+  
+  /* the elements */
+  .the-elements {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+  
+    /* justify-content: space-between; */
+    border-style: solid none none;
+    border-width: 1px;
+    position: relative;
+  }
+  
+  .task-layout {
+    border: none;
+    font-size: 1.2rem;
+  }
+  
+  /* delete button */
+  
+  .delete-icon {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 94%;
+    top: 40%;
+  }
+  
+  .delete-button {
+    border-style: solid none;
+    border-bottom: 0;
+    height: 3rem;
+    border-width: 1px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f0ebe3;
+  }
+  
