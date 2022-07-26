@@ -1,5 +1,7 @@
 import './style.css';
 import logo from './images/logo.png';
 
-const image = document.querySelector('.logo');
-image.src = logo;
+const logoDiv = document.querySelector('.logo');
+const myLogo = new Image();
+myLogo.src = logo;
+logoDiv.appendChild(myLogo);
