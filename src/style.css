@@ -1,91 +1,65 @@
+
 body {
-    background-color: bisque;
-    padding: 0%;
-  }
-  
-  .menu-section {
-    width: 60%;
-    height: auto;
-    margin: 10% 0 0 20%;
-    background-color: white;
-    border-style: solid;
-    border-width: 1px;
-  }
-  
-  .first-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  
-  .arrows {
-    margin: 2%;
-    height: 18px;
-    transition: all 0.2s;
-  }
-  
-  .arrows.active {
-    transform: rotate(180deg);
-  }
-  
-  /* add - bar */
-  .the-input-bar {
-    display: flex;
-    background-color: white;
-    padding: 0 1rem 0 1rem;
-    height: 4rem;
-  }
-  
-  .input-bar {
-    font-style: italic;
-    margin: 0%;
-    width: 99%;
-    height: auto;
-    border-style: none;
-  }
-  
-  .add-button {
-    font-size: 2rem;
-    height: 2rem;
-    margin: 0.9rem;
-    cursor: pointer;
-  }
-  
-  /* the elements */
-  .the-elements {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-  
-    /* justify-content: space-between; */
-    border-style: solid none none;
-    border-width: 1px;
-    position: relative;
-  }
-  
-  .task-layout {
-    border: none;
-    font-size: 1.2rem;
-  }
-  
-  /* delete button */
-  
-  .delete-icon {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    position: absolute;
-    left: 94%;
-    top: 40%;
-  }
-  
-  .delete-button {
-    border-style: solid none;
-    border-bottom: 0;
-    height: 3rem;
-    border-width: 1px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #f0ebe3;
-  }
-  
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 50px;
+  min-width: auto;
+  height: 50px;
+  background-color: #d0daee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  width: 50px;
+  height: 50px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+ul {
+  display: flex;
+  flex-grow: 1;
+  padding-left: 20%;
+  padding-right: 10%;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 2px;
+  opacity: 0.7;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: #d0daee;
+}
