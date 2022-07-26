@@ -1,5 +1,4 @@
-import APICall from '../core/APICall';
-
+import APICall from '../core/APICall.js';
 
 export default class DisplayController {
   totatShows = 0;
@@ -26,7 +25,7 @@ export default class DisplayController {
     }
   };
 
-   countShows() {
+  countShows() {
     this.totatShows += 1;
     const previousTotal = document.getElementById('totalShowsCount');
     previousTotal.innerHTML = this.totatShows;
@@ -73,7 +72,7 @@ export default class DisplayController {
           </div>
         </div>`;
     }
-   
+
     document.getElementById('cardHolder').appendChild(divHolder);
     this.countShows();
   }
