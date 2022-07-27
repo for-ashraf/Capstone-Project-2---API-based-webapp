@@ -1,4 +1,4 @@
-import APICall from '../core/apicall.js';
+import APICall from '../core/APICall.js';
 
 class CommentsPage {
   URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/comments';
