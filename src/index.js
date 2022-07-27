@@ -8,7 +8,7 @@ const shows = new ShowController([]);
 
 const start = 100;
 
-const end = 120;
+const end = 105;
 
 shows.fetchRange(start, end);
 const commentPopupHandler = () => {
@@ -19,6 +19,11 @@ const commentPopupHandler = () => {
       button.addEventListener('click', () => {
         const commentPopup = new CommentsController(shows, button);
         commentPopup.render();
+
+        const postComment = document.querySelector('.commentPopup-button');
+        postComment.addEventListener('click', () => {
+          commentPopup.sendComment();
+        });
       });
     });
   } else {
