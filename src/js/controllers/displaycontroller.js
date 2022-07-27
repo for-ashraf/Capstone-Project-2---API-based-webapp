@@ -1,4 +1,4 @@
-import APICall from '../core/apicall.js';
+import APICall from '../core/apicall';
 
 export default class DisplayController {
   totatShows = 0;
