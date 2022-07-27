@@ -1,6 +1,4 @@
-// Code to fetch API Data
-// Involvement API Id:7Uldp39maQvYAGYtxI7O
-export default class APICall {
+export default class NetworkCall {
   constructor(url = 'https://api.tvmaze.com/') {
     this.baseUrl = url;
   }
@@ -27,7 +25,7 @@ export default class APICall {
   getRequestNoCors = async (pathUrl = '') => {
     pathUrl.split('');
     return fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7Uldp39maQvYAGYtxI7O/likes',
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rVSJynvv1XHTg5vxDiSj/likes',
     )
       .then((response) => response.json())
       .catch((err) => err);

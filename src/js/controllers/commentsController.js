@@ -1,5 +1,7 @@
+import APICall from '../core/apicall.js';
+
 class CommentsPage {
-  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7Uldp39maQvYAGYtxI7O/comments';
+  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/comments';
 
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
