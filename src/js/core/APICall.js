@@ -9,4 +9,15 @@ export default class APICall {
       const json = returnJson ? await response.json() : await response.text();
       return json;
     };
+
+    getRequestWithOptions(queryParams) {
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+      };
+  
+      return fetch(this.baseUrl + queryParams, requestOptions)
+        .then((response) => response.json())
+        .catch((error) => error);
+    }
 }
