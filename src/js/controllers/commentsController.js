@@ -1,5 +1,4 @@
 class CommentsPage {
-
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
     this.commentsArray = [];
