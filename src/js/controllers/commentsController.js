@@ -1,11 +1,11 @@
 class CommentsPage {
- 
+
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
     this.commentsArray = [];
   }
 
- render() {
+  render() {
     const template = `<div class="popup-section">
         <div class="header">
           <img class="show-image" src="${this.show.image.medium}">

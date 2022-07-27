@@ -7,8 +7,6 @@ export default class DisplayController {
     this.moviesArray = moviesArray;
   }
 
-
-
   fetchRange = (start = 1, end = 50) => {
     const apiCall = new APICall();
     while (start < end) {
