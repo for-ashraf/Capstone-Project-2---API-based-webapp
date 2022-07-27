@@ -8,9 +8,9 @@ export default class DisplayController {
   }
 
   fetchRange = (start = 1, end = 50) => {
-    const networkCall = new APICall();
+    const apiCall = new APICall();
     while (start < end) {
-      const response = networkCall.getRequest(`shows/${start}`);
+      const response = apiCall.getRequest(`shows/${start}`);
       response
         .then((result) => {
           const movie = JSON.parse(result);
@@ -63,7 +63,7 @@ export default class DisplayController {
                 </h6>
               </div>
             </div>
-            <button id=${movie.id} type="button" class="mt-3 btn btn-info comment-button">
+            <button id=${movie.id} type="button" class="mt-3 btn btn-info comment-button" data-bs-toggle="modal" data-bs-target="#commentsPage">
               <i class="fa fa-comments mr-4"></i> Comments
             </button>
             <button type="button" class="mt-3 btn btn-secondary">
