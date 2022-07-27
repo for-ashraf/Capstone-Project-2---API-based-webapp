@@ -72,7 +72,7 @@ export default class DisplayController {
           </div>
         </div>`;
     }
-   
+
     document.getElementById('cardHolder').appendChild(divHolder);
     this.countShows();
   }

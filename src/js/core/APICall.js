@@ -1,4 +1,4 @@
-export default class NetworkCall {
+export default class APICall {
   constructor(url = 'https://api.tvmaze.com/') {
     this.baseUrl = url;
   }
