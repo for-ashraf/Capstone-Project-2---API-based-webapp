@@ -1,10 +1,12 @@
 import APICall from '../core/APICall.js';
+import LikesControllers from './likescontroller.js';
 
 export default class DisplayController {
   totatShows = 0;
 
   constructor(moviesArray) {
     this.moviesArray = moviesArray;
+    this.likesControllers = new LikesControllers();
   }
 
   fetchRange = (start = 1, end = 50) => {
@@ -23,6 +25,7 @@ export default class DisplayController {
 
       start += 1;
     }
+    new LikesControllers().getLikes();
   };
 
   countShows() {
@@ -31,11 +34,24 @@ export default class DisplayController {
     previousTotal.innerHTML = this.totatShows;
   }
 
-  printScreen(movie) {
-    const divHolder = document.createElement('div');
-    divHolder.className = 'col-md-4 col-lg-4 mt-2';
-    if (movie.image) {
-      divHolder.innerHTML = `<div class="card">
+   sendLikes = (movieID, id) => {
+     const likeController = new LikesControllers();
+     const response = likeController.sendLike(movieID);
+     response
+       .then(() => {
+         const likeCount = document.getElementById(`${id}_count`);
+         const [currentLike, keep] = likeCount.innerHTML.split(' ');
+         const intVal = parseInt(currentLike, 10);
+         likeCount.innerHTML = `${intVal + 1} ${keep}`;
+       })
+       .catch((er) => er);
+   };
+
+   printScreen(movie) {
+     const divHolder = document.createElement('div');
+     divHolder.className = 'col-md-4 col-lg-4 mt-2';
+     if (movie.image) {
+       divHolder.innerHTML = `<div class="card">
           <div class="card-body">
             <div class="card-img-actions">
               <img
@@ -71,9 +87,25 @@ export default class DisplayController {
             </button>
           </div>
         </div>`;
-    }
+     }
+     this.likesControllers.getLikes().then((res) => {
+       const obj = res.find((o) => o.item_id === movie.id);
+       if (obj != null) {
+         const likeCount = document.getElementById(`likes${movie.id}_count`);
+         const [, keep] = likeCount.innerHTML.split(' ');
 
-    document.getElementById('cardHolder').appendChild(divHolder);
-    this.countShows();
-  }
+         const intVal = parseInt(obj.likes, 10);
+         likeCount.innerHTML = `${intVal} ${keep}`;
+       }
+     }).catch((err) => err);
+
+     document.getElementById('cardHolder').appendChild(divHolder);
+     this.countShows();
+     const likeLiterner = document.getElementById(`likes${movie.id}`);
+     if (likeLiterner) {
+       likeLiterner.addEventListener('click', () => {
+         this.sendLikes(movie.id, `likes${movie.id}`);
+       });
+     }
+   }
 }
