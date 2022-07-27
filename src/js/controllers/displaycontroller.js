@@ -28,13 +28,7 @@ export default class DisplayController {
     new LikesControllers().getLikes();
   };
 
-  countShows() {
-    this.totatShows += 1;
-    const previousTotal = document.getElementById('totalShowsCount');
-    previousTotal.innerHTML = this.totatShows;
-  }
-
-   sendLikes = (movieID, id) => {
+    sendLikes = (movieID, id) => {
      const likeController = new LikesControllers();
      const response = likeController.sendLike(movieID);
      response
@@ -46,6 +40,12 @@ export default class DisplayController {
        })
        .catch((er) => er);
    };
+
+   countShows() {
+    this.totatShows += 1;
+    const previousTotal = document.getElementById('totalShowsCount');
+    previousTotal.innerHTML = this.totatShows;
+  }
 
    printScreen(movie) {
      const divHolder = document.createElement('div');
