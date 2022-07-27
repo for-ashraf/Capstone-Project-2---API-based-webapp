@@ -1,6 +1,5 @@
 import APICall from '../core/APICall.js';
-
-export default class DisplayController {
+export default class ShowController {
   totatShows = 0;
 
   constructor(moviesArray) {
@@ -72,7 +71,7 @@ export default class DisplayController {
           </div>
         </div>`;
     }
-
+    
     document.getElementById('cardHolder').appendChild(divHolder);
     this.countShows();
   }

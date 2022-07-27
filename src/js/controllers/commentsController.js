@@ -1,6 +1,9 @@
 class CommentsPage {
+  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7Uldp39maQvYAGYtxI7O/comments';
+
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
+    this.apiCall = new APICall(this.URL);
     this.commentsArray = [];
   }
 
@@ -27,6 +30,19 @@ class CommentsPage {
           </div>
 
         </div>
+
+        <div class="add-comment-container">
+          <h2>Add a comment</h2>
+
+          <form class="form add-comment-form">
+          <input type="text" placeholder="Your name" id="user-element" class="input-elements form-control">
+
+            <textarea placeholder="Your comments" id="comment-message" class="form-control" rows="5"></textarea>
+
+            <button type="button" class="btn btn-primary commentPopup-button">Comment</button>  
+          </form>        
+       </div>
+
       </div>`;
 
     const commentsPage = document.getElementById('commentsPage');
@@ -46,6 +62,52 @@ class CommentsPage {
     });
 
     genresDiv.appendChild(span);
+
+    this.getAllComments();
+  }
+
+  getAllComments() {
+    const commentsBox = document.getElementById('comments-box');
+    const commentsCount = document.getElementById('comments-count');
+    commentsBox.innerHTML = '';
+
+    const response = this.apiCall.getRequestWithOptions(`?item_id=${this.show.id}`);
+
+    response.then((result) => {
+      if (result.length) {
+        this.commentsArray = result;
+
+        this.commentsArray.forEach((comment) => {
+          const template = `
+           <p>
+            <span class="comments-date" >${comment.creation_date} </span>
+            <span class="comments-username"><b>${comment.username}: </b></span>
+            <span>${comment.comment} </span>
+           </p>
+           `;
+          commentsBox.innerHTML += `${template}`;
+        });
+      }
+      commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
+    }).catch((error) => {
+      throw new Error(error);
+    });
+  }
+
+  sendComment() {
+    const userInput = document.getElementById('user-element');
+    const commentInput = document.getElementById('comment-message');
+
+    if (userInput.value && commentInput.value) {
+      this.apiCall.postRequestWithOptions(this.show.id, userInput.value, commentInput.value)
+        .then(() => {
+          userInput.value = '';
+
+          commentInput.value = '';
+
+          this.getAllComments();
+        });
+    }
   }
 
   calculateCount() {
