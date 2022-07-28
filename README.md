@@ -30,6 +30,7 @@ To get a local copy up and running follow these simple example steps:
 ### Setup
 
 - Clone the github repository and set up linters and webpack
+- Set up a JavaScript testing library (Jest)
 
 ## Authors
 
