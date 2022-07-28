@@ -72,6 +72,8 @@ class CommentsPage {
   searchDOM() {
     const allComments = document.querySelectorAll('.comments-username');
     return allComments;
+    const { URL } = this;
+    this.URL = URL;
   }
 
   renderComments() {
@@ -86,11 +88,10 @@ class CommentsPage {
         <span class="comments-username"><b>${comment.username}: </b></span>
         <span>${comment.comment} </span>
        </p>`;
-       commentsBox.innerHTML += `${template}`;
-     });
-      commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
+      commentsBox.innerHTML += `${template}`;
+    });
+    commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
   }
-
 }
 
 export default CommentsPage;
