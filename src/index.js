@@ -44,9 +44,9 @@ const reservationPopupHandler = () => {
         const commentPopup = new ReservationController(shows, button);
         commentPopup.render();
 
-        const postReservation = document.querySelector('.commentPopup-button');
+        const postReservation = document.querySelector('.reservationPopup-button');
         postReservation.addEventListener('click', () => {
-          commentPopup.sendComment();
+          reservationPopup.sendComment();
         });
       });
     });

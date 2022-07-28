@@ -1,7 +1,7 @@
 class ReservationPage {
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
-    this.reservationArray = [];
+    this.rerservationArray = [];
   }
 
   render() {
@@ -19,11 +19,17 @@ class ReservationPage {
           </div>
         </div>
 
-        </div>
+        <div class="comments-container">
+          <h2 id="comments-count"></h2>
 
+          <div id="comments-box">
+          
+          </div>
+
+        </div>
       </div>`;
 
-    const reservationPage = document.getElementById('reservationPage');
+    const ReservationPage = document.getElementById('reservationPage');
     const modalBody = reservationPage.querySelector('.modal-body');
     modalBody.innerHTML = template;
 
@@ -40,8 +46,6 @@ class ReservationPage {
     });
 
     genresDiv.appendChild(span);
-
-    this.getAllReservation();
   }
 
   calculateCount() {
