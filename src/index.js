@@ -5,6 +5,13 @@ import DisplayController from './js/controllers/displaycontroller.js';
 
 import CommentsController from './js/controllers/commentsController.js';
 
+import logo from './images/logo.png';
+
+const logoDiv = document.getElementById('logo');
+const myLogo = new Image();
+myLogo.src = logo;
+logoDiv.appendChild(myLogo);
+
 const shows = new DisplayController([]);
 
 const start = 100;
