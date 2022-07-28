@@ -1,8 +1,8 @@
 # Capstone - Project-2 --- API Based Webapp
 
->This is a group project of three people <a href="https://github.com/for-ashraf">Muhammad Ashraf</a>, <a href="https://github.com/AbrahaKahsay">Abraha</a> and <a href="https://github.com/lucabenaventew">Luca</a>.
+> This is a group project of three people <a href="https://github.com/for-ashraf">Muhammad Ashraf</a>, <a href="https://github.com/AbrahaKahsay">Abraha</a> and <a href="https://github.com/lucabenaventew">Luca</a>.
 
-> This project is about about building your own web application based on an external API. We will select an API that provides data about a topic that we liked and then build the webapp around it. 
+> This project is about about building your own web application based on an external API. We will select an API that provides data about a topic that we liked and then build the webapp around it.
 
 ## Built With
 
@@ -15,24 +15,25 @@
 - Kanban Board
 
 ## Getting Started
+
 To get a local copy up and running follow these simple example steps:
- - Run "npm start" command at terminal to browse the page.
+
+- Run "npm start" command at terminal to browse the page.
 
 ### Prerequisites
 
-  - Web Browser to browse and following tools to debug and make changes (if any):
-      IDE eg (Atom/Visual studio code)
-      Set-up linter(HTML and CSS)
-      webpack
+- Web Browser to browse and following tools to debug and make changes (if any):
+  IDE eg (Atom/Visual studio code)
+  Set-up linter(HTML and CSS)
+  webpack
 
 ### Setup
-  - Clone the github repository and set up linters and webpack
 
+- Clone the github repository and set up linters and webpack
 
 ## Authors
 
 👤<a href="https://github.com/for-ashraf">**Muhammad Ashraf**</a>, <a href="https://github.com/AbrahaKahsay">Abraha</a> and <a href="https://github.com/lucabenaventew">Luca</a>
-
 
 ## 🤝 Contributing
 
@@ -48,6 +49,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
+- code reviewers, morning session and standup team
 - etc
 
 ## 📝 License
