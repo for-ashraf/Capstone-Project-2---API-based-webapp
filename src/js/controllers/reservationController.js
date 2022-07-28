@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import APICall from '../core/APICall.js';
-
+// Reservation controller to render reservation related tasks
 class ReservationPage {
   URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/reservations';
 
