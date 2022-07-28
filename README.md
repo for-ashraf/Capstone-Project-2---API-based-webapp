@@ -50,6 +50,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
+- code reviewers, morning session and standup team
 - etc
 
 ## 📝 License
