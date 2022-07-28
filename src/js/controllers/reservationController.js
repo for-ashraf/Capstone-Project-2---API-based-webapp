@@ -93,7 +93,8 @@ class ReservationPage {
       throw new Error(error);
     });
   }
-//  A function responsible to send reservation data
+
+  //  A function responsible to send reservation data
   sendReservation() {
     const userInput = document.getElementById('user-element');
     const dateStart = document.getElementById('date_start');
