@@ -30,11 +30,11 @@ To get a local copy up and running follow these simple example steps:
 ### Setup
 
 - Clone the github repository and set up linters and webpack
-- Set up a JavaScript testing library (Jest)
 
 ## Authors
 
-👤<a href="https://github.com/for-ashraf">**Muhammad Ashraf**</a>, <a href="https://github.com/AbrahaKahsay">Abraha</a> and <a href="https://github.com/lucabenaventew">Luca</a>
+👤<a href="https://github.com/for-ashraf">**Muhammad Ashraf**</a>, <a href="https://github.com/AbrahaKahsay">Abraha Kahsay</a> and <a href="https://github.com/lucabenaventew">Luca Benavente</a>
+
 
 ## 🤝 Contributing
 
