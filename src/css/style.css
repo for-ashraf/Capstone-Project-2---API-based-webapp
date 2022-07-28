@@ -64,6 +64,11 @@ body {
   flex-direction: column;
 }
 
+.add-reservation-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .summary-container {
   display: flex;
   flex-direction: row;
@@ -73,7 +78,16 @@ body {
   width: 30%;
 }
 
+.reservationPopup-button {
+  width: 30%;
+}
+
 .add-comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-reservation-form {
   display: flex;
   flex-direction: column;
 }
@@ -87,5 +101,9 @@ body {
 }
 
 #comment-message {
+  margin-bottom: 10px;
+}
+
+#reservation-message {
   margin-bottom: 10px;
 }

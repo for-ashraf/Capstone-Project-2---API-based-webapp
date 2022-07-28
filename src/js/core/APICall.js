@@ -63,4 +63,38 @@ export default class APICall {
       .then((response) => response.text())
       .catch((error) => error);
   }
+
+  rgetRequestWithOptions(queryParams) {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+
+    return fetch(this.baseUrl + queryParams, requestOptions)
+      .then((response) => response.json())
+      .catch((error) => error);
+  }
+
+  rpostRequestWithOptions(id, username, startDate, endDate) {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
+    const raw = JSON.stringify({
+      item_id: id,
+      username,
+      date_start: startDate,
+      date_end: endDate,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    return fetch(this.baseUrl, requestOptions)
+      .then((response) => response.text())
+      .catch((error) => error);
+  }
 }

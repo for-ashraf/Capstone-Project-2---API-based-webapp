@@ -82,8 +82,9 @@ export default class DisplayController {
             <button id=${movie.id} type="button" class="mt-3 btn btn-info comment-button" data-bs-toggle="modal" data-bs-target="#commentsPage">
               <i class="fa fa-comments mr-4"></i> Comments
             </button>
-            <button type="button" class="mt-3 btn btn-secondary">
-              <i class="fas fa-ticket-alt mr-4"></i> Reservations
+
+            <button id=${movie.id} type="button" class="mt-3 btn btn-secondary reservation-button" data-bs-toggle="modal" data-bs-target="#reservationPage">
+            <i class="fas fa-ticket-alt mr-4"></i> Reservations
             </button>
           </div>
         </div>`;
