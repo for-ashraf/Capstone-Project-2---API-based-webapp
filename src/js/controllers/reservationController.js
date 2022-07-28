@@ -1,4 +1,4 @@
-/* eslint-disable-next-line max-len */
+/* eslint-disable max-len */
 import APICall from '../core/APICall.js';
 
 class ReservationPage {
