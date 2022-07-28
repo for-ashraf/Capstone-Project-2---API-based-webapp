@@ -66,7 +66,7 @@ export default class DisplayController {
             <button id=${movie.id} type="button" class="mt-3 btn btn-info comment-button">
               <i class="fa fa-comments mr-4"></i> Comments
             </button>
-            <button type="button" class="mt-3 btn btn-secondary">
+            <button id=${movie.id} type="button" class="mt-3 btn btn-secondary reservation-button">
               <i class="fas fa-ticket-alt mr-4"></i> Reservations
             </button>
           </div>
