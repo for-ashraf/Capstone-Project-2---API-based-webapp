@@ -35,6 +35,7 @@ To get a local copy up and running follow these simple example steps:
 
 👤<a href="https://github.com/for-ashraf">**Muhammad Ashraf**</a>, <a href="https://github.com/AbrahaKahsay">Abraha Kahsay</a> and <a href="https://github.com/lucabenaventew">Luca Benavente</a>
 
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -49,6 +50,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
+- code reviewers, morning session and standup team
 - etc
 
 ## 📝 License
