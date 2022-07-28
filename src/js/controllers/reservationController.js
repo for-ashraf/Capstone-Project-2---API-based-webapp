@@ -111,7 +111,7 @@ class ReservationPage {
         });
     }
   }
-
+// countes the number of reservations
   calculateCount() {
     return this.reservationArray.length;
   }
