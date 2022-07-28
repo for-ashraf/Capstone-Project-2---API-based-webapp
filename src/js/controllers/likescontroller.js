@@ -9,6 +9,17 @@ export default class LikesControllers {
     this.getLikes();
   }
 
+  getLikes = () => {
+    const apiCall = new APICall(this.#notionUrl);
+    return apiCall
+      .getRequestNoCors(`/apps/${this.#appid}/likes`)
+      .then((res) => {
+        this.likesArray = res;
+        return res;
+      })
+      .catch((err) => err);
+  };
+
   sendLike = (movieID) => {
     const apiCall = new APICall(this.#notionUrl);
     return apiCall
@@ -20,16 +31,5 @@ export default class LikesControllers {
       )
       .then((outcome) => outcome)
       .catch((error) => error);
-  };
-
-  getLikes = () => {
-    const apiCall = new APICall(this.#notionUrl);
-    return apiCall
-      .getRequestNoCors(`/apps/${this.#appid}/likes`)
-      .then((res) => {
-        this.likesArray = res;
-        return res;
-      })
-      .catch((err) => err);
   };
 }
