@@ -1,10 +1,13 @@
+// Involvement API ID:  ER4ZcRTbIpVq3LDi1zRK
 import './css/style.css';
 
 import ShowController from './js/controllers/displaycontroller.js';
 import ReservationsController from './js/controllers/reservationsController.js';
 
 
-const shows = new ShowController([]);
+import CommentsController from './js/controllers/commentsController.js';
+
+const shows = new DisplayController([]);
 
 const start = 100;
 
@@ -32,3 +35,4 @@ const reservationPopupHandler = () => {
   };
   
   reservationPopupHandler();
+

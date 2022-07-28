@@ -25,6 +25,19 @@ body {
 #totalShows {
   position: absolute;
   right: 0;
+  padding: 0.5rem;
+  border: 2px solid black;
+  margin-top: 1rem;
+}
+
+.fa-film {
+  color: #000;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.fa-film:hover {
+  color: red;
 }
 
 .card-img {
@@ -39,7 +52,7 @@ body {
 .show-image {
   display: block;
   margin: 0 auto;
-  width: 40%;
+  width: 50%;
 }
 
 .show-name {
