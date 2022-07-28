@@ -31,7 +31,7 @@ describe('CommentsPage calculateCount method', () => {
         rating: {
           average: 7.1,
         },
-        summary: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt aliquet faucibus. Suspendisse malesuada consectetur lacinia. Maecenas eleifend magna libero, non malesuada nisl facilisis at.',
         genres: [
           'Drama', 'Adventure',
         ],
@@ -47,7 +47,7 @@ describe('CommentsPage calculateCount method', () => {
         rating: {
           average: 5.0,
         },
-        summary: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt aliquet faucibus. Suspendisse malesuada consectetur lacinia. Maecenas eleifend magna libero, non malesuada nisl facilisis at.',
         genres: [
           'Drama', 'Romance', 'Action',
         ],
@@ -62,7 +62,7 @@ describe('CommentsPage calculateCount method', () => {
         rating: {
           average: 8.5,
         },
-        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt aliquet faucibus. Suspendisse malesuada consectetur lacinia. Maecenas eleifend magna libero, non malesuada nisl facilisis at.',
         genres: [
           'Sci-fi', 'Action',
         ],
@@ -82,20 +82,20 @@ describe('CommentsPage calculateCount method', () => {
 
   const comment1 = {
     item_id: '1',
-    username: 'Jose Abel',
-    comment: 'Amazing show!',
+    username: 'Abraha',
+    comment: 'Not a bad movie!',
   };
 
   const comment2 = {
     item_id: '2',
-    username: 'Bruce Wayne',
-    comment: 'I hated this show',
+    username: 'Muhammad Ashraf',
+    comment: 'This is a flop show',
   };
 
   const comment3 = {
     item_id: '3',
-    username: 'Peter Parker',
-    comment: 'The best show is Spiderman',
+    username: 'Luca',
+    comment: 'My Best show is not that',
   };
 
   test('calculateCount function returns 0 since no comment added', () => {
@@ -131,6 +131,6 @@ describe('CommentsPage calculateCount method', () => {
     commentsPage.render();
     const [firstComment] = commentsPage.searchDOM();
     // Assert
-    expect(firstComment.innerHTML).toEqual('<b>Jose Abel: </b>');
+    expect(firstComment.innerHTML).toEqual('<b>Abraha: </b>');
   });
 });
