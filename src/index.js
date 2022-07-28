@@ -19,7 +19,7 @@ const commentPopupHandler = () => {
   if (shows.moviesArray.length === end - start) {
     const allCommentButtons = document.querySelectorAll('.comment-button');
     const allReservationButtons = document.querySelectorAll('.reservation-button');
-  
+
     allCommentButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const commentPopup = new CommentsController(shows, button);
@@ -47,6 +47,5 @@ const commentPopupHandler = () => {
     setTimeout(commentPopupHandler, 15);
   }
 };
-
 
 commentPopupHandler();

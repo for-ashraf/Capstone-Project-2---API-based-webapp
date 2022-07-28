@@ -1,3 +1,4 @@
+/* eslint-disable-next-line max-len */
 import APICall from '../core/APICall.js';
 
 class ReservationPage {
@@ -95,16 +96,16 @@ class ReservationPage {
 
   sendReservation() {
     const userInput = document.getElementById('user-element');
-    const date_start = document.getElementById('date_start');
-    const date_end = document.getElementById('date_end');
+    const dateStart = document.getElementById('date_start');
+    const dateEnd = document.getElementById('date_end');
 
-    if (userInput.value && date_start && date_end) {
-      this.apiCall.rpostRequestWithOptions(this.show.id, userInput.value, date_start.value, date_end.value)
+    if (userInput.value && dateStart && dateEnd) {
+      this.apiCall.rpostRequestWithOptions(this.show.id, userInput.value, dateStart.value, dateEnd.value)
         .then(() => {
           userInput.value = '';
 
-          date_start.value = '';
-          date_end.value = '';
+          dateStart.value = '';
+          dateEnd.value = '';
 
           this.getAllReservation();
         });
