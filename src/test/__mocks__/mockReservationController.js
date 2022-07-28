@@ -1,11 +1,8 @@
-import APICall from '../core/APICall.js';
-
 class CommentsPage {
-  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/comments';
+  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/3705SslJSJDGNoSC9NVG/reservations'
 
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
-    this.apiCall = new APICall(this.URL);
     this.commentsArray = [];
   }
 
@@ -36,13 +33,12 @@ class CommentsPage {
         <div class="add-comment-container">
           <h2>Add a comment</h2>
 
-          <form class="form add-comment-form">
+          <form class="form add-reservation-form">
           <input type="text" placeholder="Your name" id="user-element" class="input-elements form-control">
-
-            <textarea placeholder="Your comments" id="comment-message" class="form-control" rows="5"></textarea>
-
-            <button type="button" class="btn btn-primary commentPopup-button">Comment</button>  
-          </form>        
+          <input type="date" placeholder="Start Date" id="date_start" class="input-elements form-control">
+          <input type="date" placeholder="End Date" id="date_end" class="input-elements form-control">
+          <button type="button" class="btn btn-primary reservationPopup-button">Reservation</button>  
+          </form>       
        </div>
 
       </div>`;
@@ -65,55 +61,35 @@ class CommentsPage {
 
     genresDiv.appendChild(span);
 
-    this.getAllComments();
-  }
-
-  getAllComments() {
-    const commentsBox = document.getElementById('comments-box');
-    const commentsCount = document.getElementById('comments-count');
-    commentsBox.innerHTML = '';
-
-    const response = this.apiCall.getRequestWithOptions(`?item_id=${this.show.id}`);
-
-    response.then((result) => {
-      if (result.length) {
-        this.commentsArray = result;
-
-        this.commentsArray.forEach((comment) => {
-          const template = `
-           <p>
-            <span class="comments-date" >${comment.creation_date} </span>
-            <span class="comments-username"><b>${comment.username}: </b></span>
-            <span>${comment.comment} </span>
-           </p>
-           `;
-          commentsBox.innerHTML += `${template}`;
-        });
-      }
-      commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
-    }).catch((error) => {
-      throw new Error(error);
-    });
-  }
-
-  sendComment() {
-    const userInput = document.getElementById('user-element');
-    const commentInput = document.getElementById('comment-message');
-
-    if (userInput.value && commentInput.value) {
-      this.apiCall.postRequestWithOptions(this.show.id, userInput.value, commentInput.value)
-        .then(() => {
-          userInput.value = '';
-
-          commentInput.value = '';
-
-          this.getAllComments();
-        });
-    }
+    this.renderComments();
   }
 
   calculateCount() {
     return this.commentsArray.length;
+  }
+
+  searchDOM() {
+    const allComments = document.querySelectorAll('.comments-username');
+    const { URL } = this;
+    this.URL = URL;
+    return allComments;
+  }
+
+  renderComments() {
+    const commentsBox = document.getElementById('comments-box');
+    const commentsCount = document.getElementById('comments-count');
+    commentsBox.innerHTML = '';
+
+    this.commentsArray.forEach((comment) => {
+      const template = `
+       <p>
+        <span class="comments-date" >${comment.creation_date} </span>
+        <span class="comments-username"><b>${comment.username}: </b></span>
+        <span>${comment.comment} </span>
+       </p>`;
+      commentsBox.innerHTML += `${template}`;
+    });
+    commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
   }
 }
 
