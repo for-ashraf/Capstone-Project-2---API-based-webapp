@@ -71,9 +71,9 @@ class CommentsPage {
 
   searchDOM() {
     const allComments = document.querySelectorAll('.comments-username');
-    return allComments;
     const { URL } = this;
     this.URL = URL;
+    return allComments;
   }
 
   renderComments() {
