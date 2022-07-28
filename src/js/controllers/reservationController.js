@@ -1,7 +1,7 @@
-class CommentsPage {
+class ReservationPage {
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
-    this.commentsArray = [];
+    this.reservationArray = [];
   }
 
   render() {
@@ -19,18 +19,12 @@ class CommentsPage {
           </div>
         </div>
 
-        <div class="comments-container">
-          <h2 id="comments-count"></h2>
-
-          <div id="comments-box">
-          
-          </div>
-
         </div>
+
       </div>`;
 
-    const commentsPage = document.getElementById('commentsPage');
-    const modalBody = commentsPage.querySelector('.modal-body');
+    const reservationPage = document.getElementById('reservationPage');
+    const modalBody = reservationPage.querySelector('.modal-body');
     modalBody.innerHTML = template;
 
     const genresDiv = document.getElementById('genres');
@@ -46,11 +40,13 @@ class CommentsPage {
     });
 
     genresDiv.appendChild(span);
+
+    this.getAllReservation();
   }
 
   calculateCount() {
-    return this.commentsArray.length;
+    return this.reservationArray.length;
   }
 }
 
-export default CommentsPage;
+export default ReservationPage;
