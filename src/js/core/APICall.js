@@ -25,7 +25,7 @@ export default class APICall {
   getRequestNoCors = async (pathUrl = '') => {
     pathUrl.split('');
     return fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rVSJynvv1XHTg5vxDiSj/likes',
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/likes',
     )
       .then((response) => response.json())
       .catch((err) => err);
