@@ -30,6 +30,10 @@ To get a local copy up and running follow these simple example steps:
   Set-up linter(HTML and CSS)
   webpack
 
+## Live Demo ##
+
+ <a href="https://for-ashraf.github.io/Capstone-Project-2---API-based-webapp/dist/index.html"> Click here for live demo of the webpage</a>
+
 ### Setup
 
 - Clone the github repository and set up linters and webpack
