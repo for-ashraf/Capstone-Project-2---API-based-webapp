@@ -1,9 +1,9 @@
-class CommentsPage {
-  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/3705SslJSJDGNoSC9NVG/reservations'
+class ReservationPage {
+  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/reservations'
 
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
-    this.commentsArray = [];
+    this.reservationsArray = [];
   }
 
   render() {
@@ -21,30 +21,30 @@ class CommentsPage {
           </div>
         </div>
 
-        <div class="comments-container">
-          <h2 id="comments-count"></h2>
+        <div class="reservation-container">
+          <h2 id="reservation-count"></h2>
 
-          <div id="comments-box">
+          <div id="reservation-box">
           
           </div>
 
         </div>
 
-        <div class="add-comment-container">
-          <h2>Add a comment</h2>
+        <div class="add-reservation-container">
+          <h2>Add a reservation</h2>
 
           <form class="form add-reservation-form">
           <input type="text" placeholder="Your name" id="user-element" class="input-elements form-control">
-          <input type="date" placeholder="Start Date" id="date_start" class="input-elements form-control">
-          <input type="date" placeholder="End Date" id="date_end" class="input-elements form-control">
+          <input type="date" placeholder="Start Date" id="dateStart" class="input-elements form-control">
+          <input type="date" placeholder="End Date" id="dateEnd" class="input-elements form-control">
           <button type="button" class="btn btn-primary reservationPopup-button">Reservation</button>  
           </form>       
        </div>
 
       </div>`;
 
-    const commentsPage = document.getElementById('commentsPage');
-    const modalBody = commentsPage.querySelector('.modal-body');
+    const reservationPage = document.getElementById('reservationPage');
+    const modalBody = reservationPage.querySelector('.modal-body');
     modalBody.innerHTML = template;
 
     const genresDiv = document.getElementById('genres');
@@ -61,36 +61,33 @@ class CommentsPage {
 
     genresDiv.appendChild(span);
 
-    this.renderComments();
+    this.renderReservation();
   }
 
   calculateCount() {
-    return this.commentsArray.length;
+    return this.reservationArray.length;
   }
 
   searchDOM() {
-    const allComments = document.querySelectorAll('.comments-username');
+    const allReservation = document.querySelectorAll('.reservation-username');
     const { URL } = this;
     this.URL = URL;
-    return allComments;
+    return allReservation;
   }
 
-  renderComments() {
-    const commentsBox = document.getElementById('comments-box');
-    const commentsCount = document.getElementById('comments-count');
-    commentsBox.innerHTML = '';
-
-    this.commentsArray.forEach((comment) => {
+  renderReservation() {
+    const reservationBox = document.getElementById('reservation-box');
+    const reservationCount = document.getElementById('reservation-count');
+    reservationBox.innerHTML = '';
+    this.reservationArray.forEach((reservation) => {
       const template = `
-       <p>
-        <span class="comments-date" >${comment.creation_date} </span>
-        <span class="comments-username"><b>${comment.username}: </b></span>
-        <span>${comment.comment} </span>
-       </p>`;
-      commentsBox.innerHTML += `${template}`;
+      <p>
+            <span class="reservation-date">${reservation.dateStart} - ${reservation.dateEnd} by <b> ${reservation.username} </b></span>
+      </p>`;
+      reservationBox.innerHTML += `${template}`;
     });
-    commentsCount.innerHTML = `Comments: ${this.calculateCount()}`;
+    reservationCount.innerHTML = `Reservation: ${this.calculateCount()}`;
   }
 }
 
-export default CommentsPage;
+export default ReservationPage;
