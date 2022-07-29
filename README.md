@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps:
 - Run "npm start" command at terminal to browse the page.
 ## Loom Video Link for a brief intro of the app
 
-- https://www.loom.com/share/873c948d2210470780a12d503a22e857
+- https://www.loom.com/share/8396b5be39a048bfb405aa3a122cf8ac
 
 ### Prerequisites
 
@@ -35,8 +35,14 @@ To get a local copy up and running follow these simple example steps:
  <a href="https://for-ashraf.github.io/Capstone-Project-2---API-based-webapp/dist/index.html"> Click here for live demo of the webpage</a>
 
 ### Setup
+ <b> Clone the github repository and set up linters and webpack:</b>
+$ git clone https://github.com/for-ashraf/Capstone-Project-2---API-based-webapp.git
+$ cd apstone-Project-2---API-based-webapp
+$ npm i
+$ npm start
 
-- Clone the github repository and set up linters and webpack
+$ npm test  # for testing
+
 
 ## Authors
 
