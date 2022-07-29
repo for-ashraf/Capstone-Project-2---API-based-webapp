@@ -1,11 +1,11 @@
 import { JSDOM } from 'jsdom';
-import ReservationPage from './__mocks__/mockReservationController.js';
+import CommentsPage from './__mocks__/mockCommentsController.js';
 
-describe('ReservationPage calculateCount method', () => {
+describe('CommentsPage calculateCount method', () => {
   // Arrange
   const modalElement = `
    <!-- Modal -->
-   <div class="modal fade" id="reservationPage" tabindex="-1"  aria-hidden="true">
+   <div class="modal fade" id="commentsPage" tabindex="-1"  aria-hidden="true">
      <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -78,56 +78,59 @@ describe('ReservationPage calculateCount method', () => {
   const button = document.createElement('button');
   button.id = '1';
 
-  const reservationPage = new ReservationPage(shows, button);
+  const commentsPage = new CommentsPage(shows, button);
 
-  const reservation1 = {
+  const comment1 = {
     item_id: '1',
     username: 'Jose Abel',
+    comment: 'Amazing show!',
   };
 
-  const reservation2 = {
+  const comment2 = {
     item_id: '2',
     username: 'Bruce Wayne',
+    comment: 'I hated this show',
   };
 
-  const reservation3 = {
+  const comment3 = {
     item_id: '3',
     username: 'Peter Parker',
+    comment: 'The best show is Spiderman',
   };
 
-  test('calculateCount function returns 0 since no reservation added', () => {
+  test('calculateCount function returns 0 since no comment added', () => {
     // Act
-    const result = reservationPage.calculateCount();
+    const result = commentsPage.calculateCount();
 
     // Assert
     expect(result).toEqual(0);
   });
 
-  test('calculateCount returns 3 since 3 reservation has been added', () => {
+  test('calculateCount returns 3 since 3 comments has been added', () => {
     // Act
-    reservationPage.reservationArray.push(reservation1);
-    reservationPage.reservationArray.push(reservation2);
-    reservationPage.reservationArray.push(reservation3);
+    commentsPage.commentsArray.push(comment1);
+    commentsPage.commentsArray.push(comment2);
+    commentsPage.commentsArray.push(comment3);
 
-    const result2 = reservationPage.calculateCount();
+    const result2 = commentsPage.calculateCount();
 
     // Assert
     expect(result2).toEqual(3);
   });
 
-  test('confirm that the reservation are in the DOM', () => {
+  test('confirm that the comments are in the DOM', () => {
     // Act
-    reservationPage.render();
-    const allReservation = reservationPage.searchDOM();
+    commentsPage.render();
+    const allComments = commentsPage.searchDOM();
     // Assert
-    expect(allReservation.length).toEqual(3);
+    expect(allComments.length).toEqual(3);
   });
 
-  test('confirm that the reservation are in the DOM', () => {
+  test('confirm that the comments are in the DOM', () => {
     // Act
-    reservationPage.render();
-    const [firstReservation] = reservationPage.searchDOM();
+    commentsPage.render();
+    const [firstComment] = commentsPage.searchDOM();
     // Assert
-    expect(firstReservation.innerHTML).toEqual('<b>Jose Abel: </b>');
+    expect(firstComment.innerHTML).toEqual('<b>Jose Abel: </b>');
   });
 });

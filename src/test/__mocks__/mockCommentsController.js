@@ -1,5 +1,5 @@
 class CommentsPage {
-  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/3705SslJSJDGNoSC9NVG/comments'
+  URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ER4ZcRTbIpVq3LDi1zRK/comments'
 
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);

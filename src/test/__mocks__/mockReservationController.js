@@ -3,7 +3,7 @@ class ReservationPage {
 
   constructor(shows, btn) {
     [this.show] = shows.moviesArray.filter((show) => show.id === +btn.id);
-    this.reservationsArray = [];
+    this.reservationArray = [];
   }
 
   render() {
@@ -35,10 +35,11 @@ class ReservationPage {
 
           <form class="form add-reservation-form">
           <input type="text" placeholder="Your name" id="user-element" class="input-elements form-control">
-          <input type="date" placeholder="Start Date" id="dateStart" class="input-elements form-control">
-          <input type="date" placeholder="End Date" id="dateEnd" class="input-elements form-control">
-          <button type="button" class="btn btn-primary reservationPopup-button">Reservation</button>  
-          </form>       
+
+            <textarea placeholder="Your reservation" id="reservation-message" class="form-control" rows="5"></textarea>
+
+            <button type="button" class="btn btn-primary reservationPopup-button">reservation</button>  
+          </form>        
        </div>
 
       </div>`;
@@ -79,14 +80,17 @@ class ReservationPage {
     const reservationBox = document.getElementById('reservation-box');
     const reservationCount = document.getElementById('reservation-count');
     reservationBox.innerHTML = '';
+
     this.reservationArray.forEach((reservation) => {
       const template = `
-      <p>
-            <span class="reservation-date">${reservation.dateStart} - ${reservation.dateEnd} by <b> ${reservation.username} </b></span>
-      </p>`;
+       <p>
+        <span class="reservation-date" >${reservation.creation_date} </span>
+        <span class="reservation-username"><b>${reservation.username}: </b></span>
+        <span>${reservation.reservation} </span>
+       </p>`;
       reservationBox.innerHTML += `${template}`;
     });
-    reservationCount.innerHTML = `Reservation: ${this.calculateCount()}`;
+    reservationCount.innerHTML = `reservation: ${this.calculateCount()}`;
   }
 }
 
