@@ -19,6 +19,9 @@
 To get a local copy up and running follow these simple example steps:
 
 - Run "npm start" command at terminal to browse the page.
+## Loom Video Link for a brief intro of the app
+
+- https://www.loom.com/share/873c948d2210470780a12d503a22e857
 
 ### Prerequisites
 
